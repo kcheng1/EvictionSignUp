@@ -1,0 +1,15 @@
+FROM gradle:8.10.0-jdk21
+# COPY . /app
+
+WORKDIR /app
+COPY build/libs/*.jar app.jar
+# COPY --from=builder /app/build/libs/*.jar app.jar
+EXPOSE 8083
+# RUN gradle build
+# CMD ["gradle", "run"]
+
+
+
+
+
+ENTRYPOINT ["java","-jar","app.jar"]
